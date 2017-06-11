@@ -7,6 +7,7 @@ namespace cfalck.FileSystem
     class FileSystemHelper
     {
         string basePath = "";
+        string defaultErrorHTML = "<!Doctype html><html><body>Error retrieving index</body></html>";
 
         public FileSystemHelper()
         {
@@ -29,7 +30,7 @@ namespace cfalck.FileSystem
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-                return null;
+                return strBytes(this.defaultErrorHTML);
             }
         }
 
@@ -59,7 +60,7 @@ namespace cfalck.FileSystem
                 {
                     // In a last ditch effort, return default html if the index is unavailable.
                     Console.WriteLine(e2.ToString());
-                    return "<!Doctype html><html><body>Error retrieving index</body></html>";
+                    return this.defaultErrorHTML;
                 }
             }
         }
