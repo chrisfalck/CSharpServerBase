@@ -13,14 +13,6 @@ namespace cfalck.Web
             HttpListenerRequest request = context.Request;
             HttpListenerResponse response = context.Response;
 
-            // Get a string of all current threads.
-            string threadsString = "";
-            var currentThreads = Process.GetCurrentProcess().Threads;
-            foreach (ProcessThread thread in currentThreads)
-            {
-                threadsString += thread.Id + ",";
-            }
-
             var fsHelper = new FileSystemHelper();
 
             // Create a buffer from the response string.
