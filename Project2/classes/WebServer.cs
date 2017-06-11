@@ -50,7 +50,7 @@ namespace cfalck.Web
 
     class WebServer
     {
-        string[] uriPrefixes = { "http://localhost:8080/"};
+        string[] uriPrefixes = { "http://localhost:8080/" };
         HttpListener listener = null;
 
         public WebServer()

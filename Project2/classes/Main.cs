@@ -1,6 +1,4 @@
-﻿using cfalck.FileSystem;
-
-namespace cfalck.Web
+﻿namespace cfalck.Web
 {
     class MyWeb
     {
