@@ -2,6 +2,7 @@
 using System.Net;
 using System.Threading;
 using System.Diagnostics;
+using cfalck.FileSystem;
 
 namespace cfalck.Web
 {
@@ -20,52 +21,10 @@ namespace cfalck.Web
                 threadsString += thread.Id + ",";
             }
 
-            // Construct a response.
-            string responseString =
-            "<html><body> " +
-                "Hello world :)" +
-                "<p>" +
-                $"Date: {System.DateTime.Now.ToLongTimeString()}" +
-                "</p>" +
-
-                "<h3>" +
-                "Request Info:" +
-                "</h3>" +
-
-                "<p>" +
-                $"Headers: {request.Headers}" +
-                "</p>" +
-                "<p>" +
-                $"Method : {request.HttpMethod}" +
-                "</p>" +
-                "<p>" +
-                $"RawUrl: {request.RawUrl}" +
-                "</p>" +
-                "<p>" +
-                $"Url: {request.Url}" +
-                "</p>" +
-                "<p>" +
-                $"UserHostAddress: {request.UserHostAddress}" +
-                "</p>" +
-                "<p>" +
-                $"UserHostName: {request.UserHostName}" +
-                "</p>" +
-                "<p>" +
-                $"UserLanguages: {request.UserLanguages}" +
-                "</p>" +
-
-                "<h3>" +
-                "Threading Info:" +
-                "</h3>" +
-
-                "<p>" +
-                $"Thread Ids: {threadsString}" +
-                "</p>" +
-
-           "</body></html>";
+            var fsHelper = new FileSystemHelper();
 
             // Create a buffer from the response string.
-            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+            byte[] buffer = fsHelper.GetFileAsBytes("index.html");
 
             // Tell the response how many bytes are in the body.
             response.ContentLength64 = buffer.Length;

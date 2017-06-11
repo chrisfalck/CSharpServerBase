@@ -36,11 +36,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileSystemHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="WebServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="public\index.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
