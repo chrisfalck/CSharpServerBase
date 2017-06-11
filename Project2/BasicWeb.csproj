@@ -36,9 +36,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileSystemHelper.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="WebServer.cs" />
+    <Compile Include="classes\FileSystemHelper.cs" />
+    <Compile Include="classes\Main.cs" />
+    <Compile Include="classes\WebServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
