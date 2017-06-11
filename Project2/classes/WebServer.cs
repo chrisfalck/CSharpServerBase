@@ -8,7 +8,7 @@ namespace cfalck.Web
 {
     class RequestHandler
     {
-        public void HandleRequest(HttpListenerContext context)
+        public RequestHandler(HttpListenerContext context)
         {
             HttpListenerRequest request = context.Request;
             HttpListenerResponse response = context.Response;
@@ -64,8 +64,7 @@ namespace cfalck.Web
                 var context = listener.GetContext();
 
                 // Start a handler thread.
-                var handler = new RequestHandler();
-                var handlerThread = new Thread(() => handler.HandleRequest(context));
+                var handlerThread = new Thread(() => new RequestHandler(context));
                 handlerThread.Start();
             }
         }
