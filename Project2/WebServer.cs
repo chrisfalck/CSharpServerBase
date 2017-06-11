@@ -1,7 +1,7 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Threading;
 using System.Diagnostics;
-using System;
 
 namespace cfalck.Web
 {

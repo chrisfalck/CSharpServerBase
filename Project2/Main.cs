@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace cfalck.Web
+﻿namespace cfalck.Web
 {
     class MyWeb
     {
