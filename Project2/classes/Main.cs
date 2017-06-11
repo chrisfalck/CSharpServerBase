@@ -8,7 +8,6 @@ namespace cfalck.Web
         {
             WebServer web = new WebServer();
             web.Run();
-            System.Threading.Thread.Sleep(10000);
             return 0;
         }
     }
